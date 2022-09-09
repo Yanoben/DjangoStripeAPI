@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'stripe',
 ]
 
 MIDDLEWARE = [
@@ -38,7 +39,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'stripe_api.urls'
+ROOT_URLCONF = 'django_stripe.urls'
 
 TEMPLATES = [
     {
@@ -56,7 +57,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'stripe_api.wsgi.application'
+WSGI_APPLICATION = 'django_stripe.wsgi.application'
 
 
 # Database
