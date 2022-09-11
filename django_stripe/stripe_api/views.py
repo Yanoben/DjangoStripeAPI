@@ -2,11 +2,14 @@ import stripe
 from django.conf import settings
 from django.http.response import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from django.views.generic.base import TemplateView
+from .models import Item
+from django.shortcuts import render, get_object_or_404
 
 
-class HomePageView(TemplateView):
-    template_name = 'home.html'
+def index(request, id):
+    # items = Item.objects.all()
+    item = get_object_or_404(Item, pk=id)
+    return render(request, 'home.html', {'item': item})
 
 
 @csrf_exempt
@@ -32,7 +35,7 @@ def create_checkout_session(request):
                 line_items=[{
                     'price_data': {
                         'currency': 'usd',
-                        'unit_amount': 2000,
+                        'unit_amount': 200,
                         'product_data': {
                             'name': 'item',
                             'description': 'blabla',
