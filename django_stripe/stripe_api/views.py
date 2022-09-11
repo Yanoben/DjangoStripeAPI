@@ -6,6 +6,11 @@ from .models import Item
 from django.shortcuts import render, get_object_or_404
 
 
+def home(request):
+    items = Item.objects.all()
+    return render(request, 'index.html', {'items': items})
+
+
 def index(request, id):
     item = get_object_or_404(Item, pk=id)
     return render(request, 'home.html', {'item': item})
