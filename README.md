@@ -13,15 +13,8 @@ To get this project up and running locally on your computer follow the following
 `python manage.py migrate`
 
 `python manage.py runserver`
-   
+
 3. Open a browser and go to http://localhost:8000/
 
 
 ## Part of Api:
-
-
-## Get token
-
-### Request
-
-`GET api/v1/api-token-auth/`
