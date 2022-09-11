@@ -24,7 +24,8 @@ def stripe_config(request):
 
 
 @csrf_exempt
-def create_checkout_session(request):
+def buy(request, id):
+    item = get_object_or_404(Item, pk=id)
     if request.method == 'GET':
         domain_url = 'http://localhost:8000/'
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -39,10 +40,10 @@ def create_checkout_session(request):
                 line_items=[{
                     'price_data': {
                         'currency': 'usd',
-                        'unit_amount': 200,
+                        'unit_amount': item.price,
                         'product_data': {
-                            'name': 'item',
-                            'description': 'blabla',
+                            'name': item.name,
+                            'description': item.description,
                         },
                     },
                     'quantity': 1,
