@@ -7,7 +7,6 @@ from django.shortcuts import render, get_object_or_404
 
 
 def index(request, id):
-    # items = Item.objects.all()
     item = get_object_or_404(Item, pk=id)
     return render(request, 'home.html', {'item': item})
 
