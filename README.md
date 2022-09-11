@@ -15,6 +15,3 @@ To get this project up and running locally on your computer follow the following
 `python manage.py runserver`
 
 3. Open a browser and go to http://localhost:8000/
-
-
-## Part of Api:
