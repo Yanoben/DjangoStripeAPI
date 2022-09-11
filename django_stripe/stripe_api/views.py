@@ -1,7 +1,6 @@
-from stripe import checkout
 import stripe
 from django.conf import settings
-from django.http.response import JsonResponse, HttpResponse
+from django.http.response import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.base import TemplateView
 
