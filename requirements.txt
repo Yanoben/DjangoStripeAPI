@@ -8,3 +8,7 @@ requests==2.28.1
 sqlparse==0.4.2
 stripe==4.1.0
 urllib3==1.26.12
+docker
+docker-composegunicorn
+gunicorn
+martor
